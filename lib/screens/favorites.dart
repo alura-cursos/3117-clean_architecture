@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/controllers/api_controller.dart';
+import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/screens/components/entry_card.dart';
-import 'package:hyrule/utils/consts/categories.dart';
 
-class Results extends StatelessWidget {
-Results({ Key? key, required this.category }) : super(key: key);
-  final String category;
+class Favorites extends StatelessWidget {
+Favorites({ Key? key }) : super(key: key);
 
-  final ApiController apiController = ApiController();
+  final DaoController daoController = DaoController();
 
   @override
   Widget build(BuildContext context){
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(categories[category]!),
+          title: const Text("Itens salvos"),
         ),
         body: FutureBuilder(
-          future: apiController.getEntriesByCategory(category: category),
+          future: daoController.getSavedEntries(),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.active:
