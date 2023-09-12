@@ -23,12 +23,19 @@ const Categories({ Key? key }) : super(key: key);
             }, icon: const Icon(Icons.bookmark))
           ],
         ),
-        body: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
-          children: 
-            categories.keys.map((e) => Category(category: e)).toList()
-          ,
+        body: Padding(
+          padding: const EdgeInsets.all(17.0),
+          child: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              mainAxisExtent: 193,
+            ),
+            children: 
+              categories.keys.map((e) => Category(category: e)).toList()
+            ,
+          ),
         ),
       ),
     );
