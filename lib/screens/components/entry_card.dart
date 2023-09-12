@@ -16,7 +16,9 @@ class EntryCard extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Image.network(entry.image),
-                  Column(children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
                     Text(entry.name),
                     Text(entry.description),
                   ],)
