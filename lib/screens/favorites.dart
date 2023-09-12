@@ -26,7 +26,7 @@ Favorites({ Key? key }) : super(key: key);
 
               case ConnectionState.done:
                 if(snapshot.hasData) {
-                  return ListView.builder(itemBuilder: (context, index) => EntryCard(entry: snapshot.data![index]), itemCount: snapshot.data!.length,);
+                  return ListView.builder(itemBuilder: (context, index) => EntryCard(entry: snapshot.data![index], isSaved: true,), itemCount: snapshot.data!.length,);
                 }
 
               case ConnectionState.waiting:
