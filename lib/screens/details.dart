@@ -14,12 +14,22 @@ Details({ Key? key, required this.entry }) : super(key: key);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Detalhes"),
-          centerTitle: true,
+          title: const Text("Detalhes"),
         ),
         floatingActionButton: FloatingActionButton(onPressed: (){
           daoController.saveEntry(entry: entry);
         },),
+        body: Column(children: <Widget>[
+          Text(entry.name),
+            Wrap(
+              children: entry
+                  .commonLocationsConverter()
+                  .map((e) => Chip(label: Text(e)))
+                  .toList(),
+            ),
+            Image.network(entry.image),
+            Text(entry.description),
+        ],),
       ),
     );
   }
