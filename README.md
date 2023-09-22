@@ -28,7 +28,8 @@ Este curso é indicado para pessoas que já tem conhecimento intermediário e qu
 - Mostrar entradas;
 - Deletar uma entrada;
 
-//Gif
+![GIF da aplicação em execução](https://github.com/ikyrie/3117-clean_architecture/assets/22684176/d993560d-45a6-4a0c-827c-c467535a659a)
+
 
 ## 🛠️ Abrir e rodar o projeto
 
